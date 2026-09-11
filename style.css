@@ -1,0 +1,647 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #e9dfcd;
+  color: #4f3c33;
+  font-family: Nunito, sans-serif;
+}
+
+button {
+  font: 900 14px Nunito;
+  border: 0;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#app {
+  max-width: 600px;
+  margin: auto;
+  background: #fffaf0;
+  overflow: hidden;
+  box-shadow: 0 0 60px #60452a20;
+}
+
+small {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  color: #98752b;
+}
+
+
+/* ===== Intro ===== */
+
+.intro {
+  min-height: 100svh;
+  max-width: 600px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 25px;
+  background: radial-gradient(circle, #fffbe0, #ffda55);
+  position: relative;
+  overflow: hidden;
+}
+
+.intro:before,
+.intro:after {
+  content: '♡';
+  position: absolute;
+  color: #fff;
+  font-size: 80px;
+  opacity: .7;
+}
+
+.intro:before {
+  left: 8%;
+  top: 16%;
+}
+
+.intro:after {
+  right: 8%;
+  bottom: 18%;
+}
+
+.intro-inner {
+  max-width: 370px;
+}
+
+.dino {
+  font-size: 100px;
+  filter: drop-shadow(0 10px 7px #8d6b2522);
+  animation: float 3s ease-in-out infinite;
+}
+
+.dino.big {
+  font-size: 155px;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(-9px) rotate(2deg);
+  }
+}
+
+.intro h1 {
+  font: 800 52px/1 'Baloo 2';
+  margin: 4px;
+}
+
+.intro p {
+  line-height: 1.7;
+}
+
+.intro button,
+.secret button {
+  background: #4f3c33;
+  color: #fff;
+  border-radius: 999px;
+  padding: 16px 25px;
+  box-shadow: 0 7px #31251f;
+}
+
+.intro em {
+  display: block;
+  font-size: 10px;
+  color: #866f61;
+  margin-top: 18px;
+}
+
+
+/* ===== Music button ===== */
+
+.music {
+  position: fixed;
+  right: 14px;
+  top: 14px;
+  z-index: 20;
+  background: #ffffffdd;
+  border: 1px solid #e8d7b5;
+  padding: 9px 12px;
+  border-radius: 99px;
+  color: #5c473b;
+}
+
+
+/* ===== Hero ===== */
+
+.hero {
+  min-height: 100svh;
+  background: radial-gradient(circle at 50% 30%, #fff9d6, #ffdc58 78%);
+  padding: 55px 25px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero h2 {
+  font: 800 63px/.82 'Baloo 2';
+  margin: 8px 0 20px;
+  text-shadow: 0 3px #fff1a1;
+}
+
+.hero h2 span {
+  color: #ff6d7c;
+}
+
+.hero p {
+  font-size: 14px;
+  line-height: 1.75;
+  max-width: 420px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  background: #ff7180;
+  color: white;
+  padding: 15px 23px;
+  border-radius: 99px;
+  text-decoration: none;
+  font-weight: 900;
+  box-shadow: 0 6px #d45464;
+}
+
+.bubble {
+  position: absolute;
+  right: 12%;
+  top: 18%;
+  color: #fff;
+  font-size: 48px;
+}
+
+.down {
+  margin-top: 35px;
+  color: #8a6a23;
+}
+
+.down small {
+  letter-spacing: 1px;
+}
+
+
+/* ===== Generic section ===== */
+
+.section {
+  padding: 62px 20px;
+}
+
+.section h3,
+.secret h3,
+.wish h3 {
+  font: 800 36px/1.04 'Baloo 2';
+  margin: 7px 0 17px;
+}
+
+
+/* ===== Note / paper ===== */
+
+.paper {
+  background: #fff;
+  border-radius: 24px;
+  padding: 25px 21px;
+  line-height: 1.8;
+  font-size: 14px;
+  box-shadow: 0 12px 35px #684b2512;
+  border: 1px solid #f0dfbe;
+}
+
+.paper strong {
+  display: block;
+  text-align: right;
+  color: #ff6f7d;
+  font: 700 17px 'Baloo 2';
+  transform: rotate(-3deg);
+}
+
+
+/* ===== Yellow / stats ===== */
+
+.yellow {
+  background: #ffed9a;
+}
+
+.yellow > p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.stats div {
+  background: #fff9dd;
+  border: 2px solid #f2dc8a;
+  border-radius: 18px;
+  text-align: center;
+  padding: 15px 5px;
+}
+
+.stats b {
+  display: block;
+  font: 800 25px 'Baloo 2';
+  color: #dcae29;
+}
+
+.stats span {
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+
+/* ===== Letter ===== */
+
+.letter {
+  background: #fff;
+  border: 8px solid #f3d36b;
+  border-radius: 20px;
+  padding: 27px 19px;
+  box-shadow: 0 17px 35px #61452316;
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+.letter label {
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 900;
+  color: #b08a36;
+}
+
+.letter h3 {
+  font-size: 31px;
+  margin: 12px 0;
+}
+
+.letter p {
+  margin: 12px 0;
+}
+
+.letter .last {
+  font-weight: 800;
+  color: #76591e;
+}
+
+.sign {
+  text-align: right;
+  color: #ff6878;
+  font: 700 18px 'Baloo 2';
+}
+
+
+/* ===== Gallery ===== */
+
+.gallery {
+  background: #fffdf5;
+}
+
+.gallery {
+  font-size: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.photo {
+  height: 230px;
+  background: #ffefad;
+  border: 4px solid #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 22px #60452114;
+  cursor: pointer;
+}
+
+.photo.wide {
+  grid-column: 1 / -1;
+  height: 285px;
+}
+
+
+/* FOTO DARI FOLDER */
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo > b {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fffdf0e8;
+  padding: 9px;
+  text-align: center;
+  font-size: 10px;
+}
+
+
+/* ===== Story timeline ===== */
+
+.story {
+  background: #fff4c7;
+}
+
+.story article {
+  display: grid;
+  grid-template-columns: 43px 1fr;
+  gap: 13px;
+  margin: 15px 0;
+}
+
+.story article > i {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #edd071;
+  display: grid;
+  place-items: center;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 10px;
+}
+
+.story article > div {
+  background: #fff;
+  border-radius: 17px;
+  padding: 14px;
+  border: 1px solid #f0e0bf;
+}
+
+.story article small {
+  font-size: 8px;
+}
+
+.story h4 {
+  font: 800 22px 'Baloo 2';
+  margin: 1px 0;
+}
+
+.story p {
+  font-size: 11px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.future > i {
+  background: #ffdb55 !important;
+}
+
+
+/* ===== Wish ===== */
+
+.wish {
+  text-align: center;
+  background: #ffd84e;
+  padding: 60px 22px;
+}
+
+.wish .dino {
+  font-size: 90px;
+}
+
+.wish h3 {
+  margin: 6px 0;
+}
+
+.wish > p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.tags span {
+  background: #fff3be;
+  border-radius: 99px;
+  padding: 8px 12px;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+
+/* ===== Secret / final gift ===== */
+
+.secret {
+  text-align: center;
+  padding: 70px 22px 85px;
+  background: #fff9e8;
+}
+
+.secret p {
+  font-size: 13px;
+}
+
+.secret button {
+  margin-top: 8px;
+  background: #ff7180;
+  box-shadow: 0 7px #d45364;
+}
+
+.secret button:active,
+.intro button:active {
+  transform: translateY(4px);
+  box-shadow: 0 3px;
+}
+
+
+/* ===== Modal ===== */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #302722b8;
+  backdrop-filter: blur(7px);
+  z-index: 40;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modalbox {
+  max-width: 390px;
+  background: #fffaf0;
+  border-radius: 28px;
+  padding: 31px 21px;
+  text-align: center;
+  box-shadow: 0 25px 80px #0004;
+  position: relative;
+  animation: pop .3s;
+}
+
+.modalbox > button {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  background: none;
+  font-size: 29px;
+  color: #8b7669;
+}
+
+.modalbox > div:first-of-type {
+  font-size: 60px;
+}
+
+.modalbox h2 {
+  font: 800 30px/1 'Baloo 2';
+  color: #ff6877;
+}
+
+.modalbox p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.modalbox blockquote {
+  margin: 17px 0;
+  background: #ffefa8;
+  border-radius: 17px;
+  padding: 17px;
+  font-weight: 800;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.love {
+  color: #ff6877;
+  font: 800 25px 'Baloo 2';
+}
+
+@keyframes pop {
+  from {
+    transform: scale(.86);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* ===== Footer ===== */
+
+footer {
+  text-align: center;
+  background: #4f3c33;
+  color: #fff;
+  padding: 28px 20px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+footer strong {
+  font: 800 23px 'Baloo 2';
+}
+
+footer p {
+  font-size: 10px;
+  color: #e9ddcf;
+}
+
+footer small {
+  color: #ffdf67;
+}
+
+
+/* ===== Responsive ===== */
+
+@media (max-width: 390px) {
+  .hero h2 {
+    font-size: 55px;
+  }
+
+  .section h3,
+  .secret h3,
+  .wish h3 {
+    font-size: 32px;
+  }
+
+  .dino.big {
+    font-size: 135px;
+  }
+}
+
+@media (min-width: 601px) {
+  body {
+    background: #e9dfcd;
+  }
+}
+
+
+/* ===== OFFICIAL NAILONG CHARACTER ===== */
+
+.nailong-real {
+  width: 185px;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 15px 12px rgba(110, 80, 20, .16));
+  animation: nailongFloat 3s ease-in-out infinite;
+}
+
+.nailong-real.big {
+  width: 165px;
+}
+
+.wish .nailong-real {
+  width: 150px;
+  margin: 0 auto 12px;
+}
+
+.intro .nailong-real {
+  width: 180px;
+  margin: 0 auto 4px;
+}
+
+.nailong-real + h1 {
+  margin-top: 0;
+}
+
+@keyframes nailongFloat {
+  50% {
+    transform: translateY(-9px) rotate(1deg);
+  }
+}
